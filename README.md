@@ -27,7 +27,10 @@ q) update c3:.xls.as'[`s64;c3] from `tabNew;
 q) tabNew:(`$.xls.as[`s65;]each cols tabNew) xcol tabNew;
 q) .xls.write[`:file.xls;`tabOrig`tabNew]
 ```
-Output:
+Unformatted tab:
 
 ![Alt text](examples/tabOrig.png?raw=true "tabOrig")
+
+Formatted tab:
+
 ![Alt text](examples/tabNew.png?raw=true "tabNew")
