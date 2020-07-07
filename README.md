@@ -21,7 +21,7 @@ s75| "green cell"
 Applying some conditional colour formatting, number formatting, changing column names to bold and saving a table per tab:
 ```q
 q) tabOrig:tabNew:([]c1:10 20;c2:100000 1000;c3:0.1 0.2;c4:`a`b);
-q) update c1:.xls.as'[?[c1>10;`s73;`s75];string c1] from `tabNew;
+q) update c1:.xls.as'[?[c1>10;`s73;`s75];c1] from `tabNew;
 q) update c2:.xls.as'[`s62;c2] from `tabNew;
 q) update c3:.xls.as'[`s64;c3] from `tabNew;
 q) tabNew:(`$.xls.as[`s65;]each cols tabNew) xcol tabNew;
