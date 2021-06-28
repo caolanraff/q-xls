@@ -23,12 +23,22 @@ ec:{$["<Cell"~5#v:$[-11h=type x;string x;x];v;.h.htc[`Cell;ec0 x]]};
 
 k)es:{.h.htac[`Worksheet;(,`ss:Name)!,$x].h.htc[`Table]@,/(.h.htc[`Row]@,/ec')'(,!+y),+.+y:0!y};
 
-k)edsn:{.h.ex .h.eb@styles,"\r\n"/:(!x)es'. x};
+k)edsn0:{"\r\n"/:(!x)es'. x};
+k)edsn:{.h.ex .h.eb@styles,edsn0 x};
 
 write:{[f;t]
   d:{enlist[x]!enlist value x}each t;
   f 0:edsn $[1<count t;raze d;d]
   };
+
+append:{[f;t]
+  o:read0 f;
+  o:@[o;count[o]-1;-11_];
+  d:{enlist[x]!enlist value x}each t;
+  n:edsn0 $[1<count t;raze d;d];
+  n,:"</Workbook>";
+  f 0:o,enlist n
+  }
 
 as:{[s;d]
   .h.htac[`Cell;$[null s;()!();(enlist`ss:StyleID)!enlist string s];ec0 d]
