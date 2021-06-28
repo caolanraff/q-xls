@@ -26,19 +26,19 @@ k)es:{.h.htac[`Worksheet;(,`ss:Name)!,$x].h.htc[`Table]@,/(.h.htc[`Row]@,/ec')'(
 k)edsn0:{"\r\n"/:(!x)es'. x};
 k)edsn:{.h.ex .h.eb@styles,edsn0 x};
 
-write:{[f;t]
-  d:{enlist[x]!enlist value x}each t;
-  f 0:edsn $[1<count t;raze d;d]
+fmt:{
+  d:{enlist[x]!enlist value x}each x;
+  $[1<count x;raze d;d]
   };
+
+write:{[f;t] f 0:edsn fmt t};
 
 append:{[f;t]
   o:read0 f;
   o:@[o;count[o]-1;-11_];
-  d:{enlist[x]!enlist value x}each t;
-  n:edsn0 $[1<count t;raze d;d];
-  n,:"</Workbook>";
+  n:edsn0[fmt t],"</Workbook>";
   f 0:o,enlist n
-  }
+  };
 
 as:{[s;d]
   .h.htac[`Cell;$[null s;()!();(enlist`ss:StyleID)!enlist string s];ec0 d]
