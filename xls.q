@@ -1,3 +1,6 @@
+/ Write kdb+ tables to Excel SpreadsheetML (.xls), with per-cell styling.
+/ Cell/row/worksheet encoding (ec0, es, edsn0, edsn) is written in k for
+/ terseness and speed on large tables; everything else here is plain q.
 \d .xls
 
 style.default:.h.htac[`Style;(`ss:ID`ss:Name)!("Default";"Normal");"<Alignment ss:Vertical=\"Bottom\"/><Borders/><Font ss:FontName=\"Calibri\" x:Family=\"Swiss\" ss:Size=\"11\" ss:Color=\"#000000\"/><Interior/><NumberFormat/><Protection/>"];
