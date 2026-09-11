@@ -4,8 +4,9 @@
 
 A kdb+/q library for writing tables to Excel (`.xls`, SpreadsheetML XML
 format). It wraps the built-in `.h` namespace to support per-cell styling —
-number formats, bold text, and conditional cell colouring — and appending
-extra tabs to a workbook that's already been written.
+number formats, font styles, alignment, borders, and conditional cell
+colouring — and appending extra tabs to a workbook that's already been
+written.
 
 ## Requirements
 
@@ -25,11 +26,21 @@ Available styles:
 ```q
 q).xls.style.help
 s62| "comma separators (e.g. 100,000)"
+s63| "currency (e.g. $1,234.56)"
 s64| "percentage (must be 0.## format)"
 s65| "bold"
+s66| "italic"
+s67| "underline"
+s68| "date (dd/mm/yyyy)"
+s69| "center-aligned"
+s70| "right-aligned"
+s71| "thin border"
 s73| "red cell"
 s74| "yellow cell"
 s75| "green cell"
+s76| "blue cell"
+s77| "orange cell"
+s78| "gray cell"
 ```
 
 Applying some conditional colour formatting, number formatting, changing
