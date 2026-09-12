@@ -1,2 +1,5 @@
 # Generated workbook output from running the README example
 file.xls
+
+# Local Claude Code project config/notes, not meant to be published
+.claude/
